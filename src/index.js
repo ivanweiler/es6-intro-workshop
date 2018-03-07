@@ -2,6 +2,10 @@
  * Quick demonstration of ES6 syntax and functionalities
  */
 
+//import 'bootstrap';
+import { Company } from './lib.js';
+import Toggle from './toggle.js';
+
 /**
  * Which types of data exists in JS? (Boolean, Number, String, Array, Object)
  *
@@ -98,8 +102,9 @@ console.log(name);
 //merge 2 objects with this syntax
 const tools = { computer: 'Linux', editor: 'PhpStorm' };
 
-const merge2objects = {...person, ...tools};  //same as Object.assign()
-console.log(merge2objects);
+//Why this doesn't work with babel ??
+//const merge2objects = {...person, ...tools};  //same as Object.assign()
+//console.log(merge2objects);
 
 
 /**
@@ -141,7 +146,6 @@ console.log( x4('Inchoo', 'Trg slobode 6') );
  */
 
 //class Company is imported from lib.js
-import { Company } from './lib.js';
 
 /*
 class Company {
@@ -182,42 +186,7 @@ class Inchoo extends Company {
 var inchoo = new Inchoo();
 console.log(inchoo.toString());
 
-
-/**
- * 1. Create Toggle class that takes link selectors (Link 1, Link 2) and div selectors (Test 1, Test 2)
- * and toggles them on link click
- * 2. Separate Toggle class to separate toggle.js and import it on top of this file
- */
-
-class Toggle {
-  constructor(links, content) {
-    //get links
-    this.links = document.querySelectorAll(links);
-    //get divs
-    this.divs = document.querySelectorAll(content);
-
-    this.links.forEach((el,i) => {
-      el.addEventListener('click', (e) => {
-        this.toggle(i);
-      });
-    });
-
-    this.toggle(0);
-  }
-  toggle(i) {
-    //bad code, fixed on 2 links for simplicity, make it work on any no of links/divs
-    if (i == 0) {
-      this.divs[0].style.display = 'block';
-      this.divs[1].style.display = 'none';
-    } else {
-      this.divs[0].style.display = 'none';
-      this.divs[1].style.display = 'block';
-    }
-  }
-}
-
 var contentToggle = new Toggle('a.nav-link', 'div.toggle');
-
 
 // AMD vs CommonJS vs ES6 import? http://exploringjs.com/es6/ch_modules.html#_ecmascript-5-module-systems
 

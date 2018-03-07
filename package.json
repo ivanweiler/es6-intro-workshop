@@ -1,0 +1,35 @@
+{
+  "name": "es6-workshop",
+  "version": "0.0.1",
+  "description": ":]",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanweiler/es6-intro-workshop.git"
+  },
+  "keywords": [
+    "inchoo",
+    "es6"
+  ],
+  "author": "Ivan Weiler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanweiler/es6-intro-workshop/issues"
+  },
+  "homepage": "https://github.com/ivanweiler/es6-intro-workshop#readme",
+  "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}
