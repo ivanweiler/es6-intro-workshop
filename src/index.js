@@ -196,6 +196,16 @@ console.log('Watchers beware !!');
 
 const apiEndpoint = 'http://localho.st/magento-2.2/rest/V1/products-render-info?searchCriteria[page_size]=10&storeId=1&currencyCode=en_US';
 
+fetch(apiEndpoint)
+  .then(function(response) {
+    console.timeStamp()
+    return response.json();
+  })
+  .then(function(json){
+    console.timeStamp()
+    console.log(json);
+  });
+
 /*
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
@@ -219,18 +229,6 @@ function callMagentoApi(url) {
     xhr.send();
   });
 }
-*/
-
-/*
-fetch(apiEndpoint)
-  .then(function(response) {
-    console.timeStamp()
-    return response.json();
-  })
-  .then(function(json){
-    console.timeStamp()
-    console.log(json);
-});
 */
 
 //throw 'die';
