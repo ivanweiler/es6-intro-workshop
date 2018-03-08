@@ -192,14 +192,45 @@ var contentToggle = new Toggle('a.nav-link', 'div.toggle');
 
 // Template/string literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
+console.log('Watchers beware !!');
 
-/**
- * For next time:
- * 1. Finish Toggle task
- * 2. Examine fetch() and Promises
- * 3. Play with Babel :) https://babeljs.io/repl/  - transforms ES6 syntax to ES5
- *
- */
+const apiEndpoint = 'http://localho.st/magento-2.2/rest/V1/products-render-info?searchCriteria[page_size]=10&storeId=1&currencyCode=en_US';
 
+/*
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    //do something
+    //do something else
+    //do something else
+    console.log(xhr.response);
+  }
+};
+xhr.open('GET', apiEndpoint, true);
+xhr.send();
+
+
+function callMagentoApi(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = () => resolve(xhr.responseText);
+    xhr.onerror = () => reject(xhr.statusText);
+    xhr.send();
+  });
+}
+*/
+
+/*
+fetch(apiEndpoint)
+  .then(function(response) {
+    console.timeStamp()
+    return response.json();
+  })
+  .then(function(json){
+    console.timeStamp()
+    console.log(json);
+});
+*/
 
 //throw 'die';
