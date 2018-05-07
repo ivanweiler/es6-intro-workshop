@@ -20,11 +20,6 @@ const const1 = true;
 if(const1 == true) {
   //let variable only exists inside its brackets
   let num = 102;
-
-  if(true) {
-    console.log(num);
-  }
-
   console.log(num);
 }
 console.log(num);
@@ -34,42 +29,52 @@ const const2 = { a: 2, b:3 }; //new Object(), {}
 const2.a = 1;
 const2.c = 4;
 
-console.log(const2); // we can change constant if Array or Object
-
+console.log(const2); // we CAN change constant if Array or Object
 //throw 'die';
+
+
+/**
+ * Template/string literals
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+ */
+
+var newString = str + ' waz here!';
+console.log(newString);
+
 
 /**
  * Array
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
  */
 
 var arr = [5, 6, 7, 8, 9]; //new Array(), []
-// 0:5, 1:6, 2:7 ..
+
 console.log(arr); // check __proto__ in console to see which methods we can use with Array
 
 for(var i = 0; i < arr.length; i++) {
   console.log(arr[i]);
 }
 
-console.log('forEach example:')
 arr.forEach(function (value, i) {
   console.log(value);
 });
+//throw 'die';
 
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
 var b = arr.map(function (value) {
   return String(value) + ' Inchoo';
 });
 console.log(b);
 
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 var onlyEvenNumbers = arr.filter(function(value) {
   return (value % 2 == 0);
 });
 console.log(onlyEvenNumbers);
-
 //throw 'die';
 
-//check other existing Array functions
+//@todo: check other existing Array functions
 
 /**
  * Destructing, spread
@@ -130,16 +135,15 @@ var x4 = (name, address) => name + ', ' + address;
 
 console.log( x4('Inchoo', 'Trg slobode 6') );
 
-//@me: mention bind/scope difference
+//@me: mention bind/scope difference with arrow functions
 
 /**
- * Import/export statements, Class
+ * Class, Import/export statements
  *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
  *
  * AMD vs CommonJS vs ES6 import: http://exploringjs.com/es6/ch_modules.html#_ecmascript-5-module-systems
- *
  */
 
 //class Company is imported from lib.js; how is this loaded??
@@ -152,8 +156,8 @@ class Company {
   }
 
   toString() {
-    //return this.name + ', ' + this.address;
-    return `${this.name}, ${this.address}`;
+    return this.name + ', ' + this.address;
+    //return `${this.name}, ${this.address}`;
   }
 }
 
@@ -187,9 +191,6 @@ console.log(inchoo.toString());
 
 import Toggle from './lib.js';
 var contentToggle = new Toggle('a.nav-link', 'div.toggle');
-
-
-// Template/string literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 
 /**
