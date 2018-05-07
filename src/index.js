@@ -50,15 +50,14 @@ console.log(newString);
  */
 
 var arr = [5, 6, 7, 8, 9]; //new Array(), []
-
 console.log(arr); // check __proto__ in console to see which methods we can use with Array
 
 for(var i = 0; i < arr.length; i++) {
-  console.log(arr[i]);
+  //console.log(arr[i]);
 }
 
 arr.forEach(function (value, i) {
-  console.log(value);
+  //console.log(value);
 });
 //throw 'die';
 
@@ -84,6 +83,7 @@ console.log(onlyEvenNumbers);
  */
 
 var [a1, a2, ...rest] = arr; //[5, 6, 7, 8, 9]
+console.log(a1, a2, rest);
 
 /* same as:
 var a1 = arr[0];
@@ -91,25 +91,24 @@ var a2 = arr[1];
 var rest = ono sto je ostalo !!
 */
 
-console.log(a1);
-console.log(rest);
-
 //same thing on Objects
 
 const person = { name: 'Ivan Weiler', gender: 'Male', age: 37 };
 
 var {name, gender} = person;
-console.log(name);
+console.log(name, gender);
+
+//var {name: ime, gender: marka} = person;
 
 //merge 2 objects with this syntax
 const tools = { computer: 'Linux', editor: 'PhpStorm' };
-
-const merge2objects = {...person, ...tools};  //same as Object.assign()
-console.log(merge2objects);
+const mergedObjects = {...person, ...tools};  //same as Object.assign()
+console.log(mergedObjects);
 
 
 /**
- * Arrow Functions, rest operator
+ * Arrow Functions, rest operator, default argument value
+ *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
  *
@@ -120,22 +119,20 @@ function x1(name, address) {
   return name + ', ' + address;
 }
 
-var x2 = function(name, address, ...rest) {
+var x2 = function(name, address = 'N/A', ...rest) {
+  console.log(address);
   console.log(rest);
   return name + ', ' + address;
 }
 
 x2('Inchoo', 'Trg slobode 6', 'Osijek', 'Croatia');
+//x2('Inchoo');
 
 var x3 = (name, address) => {
   return name + ', ' + address;
 }
 
-var x4 = (name, address) => name + ', ' + address;
-
-console.log( x4('Inchoo', 'Trg slobode 6') );
-
-//@me: mention bind/scope difference with arrow functions
+//@me: show short syntax, mention bind/scope difference with arrow functions
 
 /**
  * Class, Import/export statements
@@ -254,7 +251,7 @@ function callMagentoApi(url) {
 // npm init
 // npm run test
 // npm install --save-dev webpack webpack-cli babel-loader babel-preset-env
-// npm install --save bootstrap jquery popper
+// npm install --save bootstrap jquery popper.js
 
 // npm install --save-dev webpack-dev-server
 
