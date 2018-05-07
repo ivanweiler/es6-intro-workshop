@@ -67,6 +67,7 @@ var onlyEvenNumbers = arr.filter(function(value) {
 });
 console.log(onlyEvenNumbers);
 
+//throw 'die';
 
 //check other existing Array functions
 
@@ -184,8 +185,6 @@ console.log(inchoo.toString());
 
 
 
-
-
 import Toggle from './lib.js';
 var contentToggle = new Toggle('a.nav-link', 'div.toggle');
 
@@ -194,13 +193,74 @@ var contentToggle = new Toggle('a.nav-link', 'div.toggle');
 
 
 /**
- * For next time:
- * 1. Examine fetch() and Promises in more detail
- * 2. Play with Babel, https://babeljs.io/repl/  - transforms ES6 syntax to ES5
+ * Fetch and Promises, CORS
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
  *
  */
 
+const apiEndpoint = 'http://magento2.inchoo4u.net/rest/V1/products?searchCriteria[page_size]=20';
+
+fetch(apiEndpoint)
+  .then(function(response) {
+    console.log('Recieved response status & headers');
+    return response.json();
+  })
+  .then(function(json) {
+    console.log('Recieved full response');
+    console.log(json);
+  });
+
+
+/*
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    //do something
+    //do something else
+    //do something else
+    console.log(xhr.response);
+  }
+};
+xhr.open('GET', apiEndpoint, true);
+xhr.send();
+
+function callMagentoApi(url) {
+  return new Promise((resolve, reject) => {
+     const xhr = new XMLHttpRequest();
+     xhr.open('GET', url);
+     xhr.onload = () => resolve(xhr.responseText);
+     xhr.onerror = () => reject(xhr.statusText);
+     xhr.send();
+   });
+}
+*/
 
 
 
-//throw 'die';
+// What is SPA, PWA, server-side rendering, ..
+// http://luthien.netlify.com - Adrian Bece, real Magento API SPA
+
+/**
+ * Tools
+ *
+ * npm, webpack, babel
+ *
+ * https://babeljs.io/repl/
+ */
+
+// npm init
+// npm run test
+// npm install --save-dev webpack webpack-cli babel-loader babel-preset-env
+// npm install --save bootstrap jquery popper
+
+// npm install --save-dev webpack-dev-server
+
+/**
+ * @todo:
+ *
+ * Examine fetch() and Promises in more detail
+ * Codecademy - Learn ReactJS: Part I && II
+ *
+ */

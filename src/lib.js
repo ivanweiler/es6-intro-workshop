@@ -17,9 +17,12 @@ export default class Toggle {
     //get divs
     this.divs = document.querySelectorAll(content);
 
+    this.baseURL = window.location.href;
+
     this.links.forEach((el,i) => {
       el.addEventListener('click', (e) => {
         this.toggle(i);
+        e.preventDefault();
       });
     });
 
@@ -30,9 +33,15 @@ export default class Toggle {
     if (i == 0) {
       this.divs[0].style.display = 'block';
       this.divs[1].style.display = 'none';
+
+      //history.pushState(null, null, this.baseURL + "");
+
     } else {
       this.divs[0].style.display = 'none';
       this.divs[1].style.display = 'block';
+
+      //history.pushState(null, null, this.baseURL + "link2");
+
     }
   }
 }
