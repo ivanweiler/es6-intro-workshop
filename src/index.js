@@ -40,6 +40,7 @@ console.log(const2); // we CAN change constant if Array or Object
  */
 
 var newString = str + ' waz here!';
+//var newString = `${str} waz here`;
 console.log(newString);
 
 
