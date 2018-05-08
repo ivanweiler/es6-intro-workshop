@@ -1,9 +1,5 @@
 /**
- * Quick demonstration of ES6 syntax and functionalities
- */
-
-/**
- * Which types of data exists in JS? (Boolean, Number, String, Array, Object)
+ * Which types of data exists in JS?
  *
  * var, let, const
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
@@ -154,8 +150,8 @@ class Company {
   }
 
   toString() {
-    return this.name + ', ' + this.address;
-    //return `${this.name}, ${this.address}`;
+    return `${this.name}, ${this.address}`;
+    //return this.name + ', ' + this.address;
   }
 }
 
